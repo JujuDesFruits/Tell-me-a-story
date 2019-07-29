@@ -24,9 +24,9 @@ pousser les modifications sur la branche principale
 ```
 git add .
 git commit -m "nom_de_la_modification_explicite"
-git push
+git push --set-upstream origin nom_de_la_branche
 ```
-cliquer sur le lien proposer et completez le merge request.
+cliquer sur le lien proposer et completez le pull request.
 **Ne pas s'auto merger à moins de réaliser un changement mineur**
 Pour mettre votre branche à jour dans le cas d'un conflit avec la branche *master* réaliser cette étape:
 ```
