@@ -3,10 +3,13 @@
 Ci-joint la liste des onglet pour se retrouver dans le projet:
 
 - [Wiki/Documentation](https://github.com/JujuDesFruits/Tell-me-a-story/wiki)
-- [site internet](#) *en cours de réalisation*
+- [site internet](http://tell-me-a-story.onthewifi.com/) *en cours de réalisation*
 - [play store](#) *en cours de réalisation*
 - [apple store](#) *en cours de réalisation*
 - [Board des taches à réaliser](https://github.com/JujuDesFruits/Tell-me-a-story/projects/1)
+
+Pour accéder au server, veuillez transmettre votre clé publique rsa à un admin qu'il puisse vous rajouter un accès ssh
+**root@tell-me-a-story.onthewifi.com**
 
 ## Règles de modification du code
 
