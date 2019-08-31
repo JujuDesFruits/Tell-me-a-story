@@ -10,4 +10,5 @@ class CustomColors {
   static Color lightBlue = Color(0xff4a69bd);
   static Color blue = Color(0xff1e3799);
   static Color grenateRed = Color(0xffc0392b);
+  static Color paleYellow = Color(0xfff7d794);
 }

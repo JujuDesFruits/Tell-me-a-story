@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tell_me_a_story/CustomWidget/CustomButton.dart';
+import 'package:tell_me_a_story/Settings/Settings.dart';
 import 'package:tell_me_a_story/Utils/Colors.dart';
 import 'package:package_info/package_info.dart';
 
@@ -23,13 +24,13 @@ class _HomeState extends State<Home> {
   void initData() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     _version = packageInfo.version;
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
-      // backgroundColor: CustomColors.background,
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -44,13 +45,22 @@ class _HomeState extends State<Home> {
             Container(
               margin: EdgeInsets.only(top: 40, left: 5, right: 5, bottom: 20),
               child: Center(
-                child: Text(
-                  "Tell me a story",
-                  style: TextStyle(
-                      color: CustomColors.primary,
-                      fontSize: 38,
-                      fontWeight: FontWeight.w900,
-                      fontFamily: "Timoteo"),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "Tell me a story",
+                      style: TextStyle(
+                          color: CustomColors.primary,
+                          fontSize: 38,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: "Timoteo"),
+                    ),
+                    Container(
+                      width: 300,
+                      height: 3,
+                      color: CustomColors.lightBlue,
+                    )
+                  ],
                 ),
               ),
             ),
@@ -62,13 +72,19 @@ class _HomeState extends State<Home> {
                     width: buttonWidth,
                     color: CustomColors.secondary,
                     content: Text("Entrer dans l'histoire"),
-                    icon: Icon(Icons.flight_takeoff),
+                    icon: Icon(Icons.import_contacts),
                   ),
                   CustomButton(
                     width: buttonWidth,
                     color: CustomColors.lightBlue,
                     content: Text("Paramètres"),
                     icon: Icon(Icons.settings),
+                    callBack: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return Settings();
+                      }));
+                    },
                   ),
                 ],
               ),
