@@ -8,9 +8,6 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-
-
-
   widgetRow(title) {
     return Container(
       margin: EdgeInsets.only(top: 10, left: 15, right: 15),
@@ -57,7 +54,7 @@ class _SettingsState extends State<Settings> {
                 margin: EdgeInsets.only(top: 40, left: 5, right: 5, bottom: 20),
                 child: Text(
                   "Settings",
-                  style: TextStyle(fontSize: 30, color: CustomColors.secondary),
+                  style: TextStyle(fontSize: 30, color: CustomColors.orange),
                 ),
               ),
             ),
@@ -66,8 +63,8 @@ class _SettingsState extends State<Settings> {
               height: 3,
               color: CustomColors.lightBlue,
             ),
-            widgetRow("Animations :", animations),
-            widgetRow("Son :", sound),
+            widgetRow("Animations :"),
+            widgetRow("Son :"),
           ],
         ),
       ),
