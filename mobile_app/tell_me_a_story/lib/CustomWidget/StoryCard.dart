@@ -64,7 +64,7 @@ class StoryCard extends StatelessWidget {
                           left: 10, right: 10, top: 10, bottom: 30),
                       margin: EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                          color: CustomColors.background,
+                          color: CustomColors.black.withOpacity(0.5),
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(30),
                               topRight: Radius.circular(30),
@@ -72,7 +72,7 @@ class StoryCard extends StatelessWidget {
                       child: Text(
                         resume,
                         style: TextStyle(
-                            color: textColor, fontStyle: FontStyle.italic),
+                            color: Colors.white, fontStyle: FontStyle.italic),
                         textAlign: TextAlign.center,
                       ),
                     ),

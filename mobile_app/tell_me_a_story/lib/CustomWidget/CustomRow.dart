@@ -11,14 +11,14 @@ class CustomRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 5),
+      margin: EdgeInsets.all(5),
       child: Column(
         children: [
           Row(
             children: [
               Text(
                 title,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: CustomColors.paleYellow),
               ),
               Text(
                 content,
@@ -26,10 +26,6 @@ class CustomRow extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            height: 2,
-            color: CustomColors.paleYellow,
-          )
         ],
       ),
     );
