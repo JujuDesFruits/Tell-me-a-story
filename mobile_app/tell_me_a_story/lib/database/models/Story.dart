@@ -30,7 +30,7 @@ class Story {
     List<Story> stories = new List();
     for (Map<String, dynamic> item in list) {
       Story story = new Story(
-        id: item["id"],
+        id: item["_id"],
         scene: item["scene"],
         resume: item["resume"],
         parent: item["parent"],
@@ -50,7 +50,7 @@ class Story {
 
   toMap() {
     return {
-      "id": this.id,
+      "_id": this.id,
       "scene": this.scene,
       "resume": this.resume,
       "parent": this.parent,

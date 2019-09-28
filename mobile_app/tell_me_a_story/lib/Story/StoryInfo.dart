@@ -4,7 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:tell_me_a_story/CustomWidget/Background.dart';
 import 'package:tell_me_a_story/CustomWidget/CustomButton.dart';
 import 'package:tell_me_a_story/CustomWidget/CustomRow.dart';
+import 'package:tell_me_a_story/Story/StoryPlayer.dart';
 import 'package:tell_me_a_story/Utils/Colors.dart';
+import 'package:tell_me_a_story/database/helpers/SceneHelper.dart';
+import 'package:tell_me_a_story/database/models/Scene.dart';
 import 'package:tell_me_a_story/database/models/Story.dart';
 
 class StoryInfo extends StatefulWidget {
@@ -176,7 +179,15 @@ class _StoryInfoState extends State<StoryInfo> {
                 Expanded(
                   child: Container(
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          new MaterialPageRoute(builder: (builder) {
+                            return StoryPlayer(
+                              story: widget.story,
+                            );
+                          }),
+                        );
+                      },
                       color: CustomColors.lightBlue,
                       child: Container(
                         padding: EdgeInsets.all(20),

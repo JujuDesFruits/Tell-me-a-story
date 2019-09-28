@@ -22,7 +22,7 @@ class _StoryChoice extends State<StoryChoice> {
   }
 
   initData() async {
-    stories = Story.listToStories(await StoryHelper.getStories());
+    stories = await Story.listToStories(await StoryHelper.get());
     setState(() {});
   }
 

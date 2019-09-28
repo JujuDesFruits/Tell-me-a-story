@@ -47,6 +47,9 @@ flutter:
     - family: Timoteo
       fonts:
         - asset: assets/fonts/Timoteo.ttf
+    - family: DS
+      fonts:
+        - asset: assets/fonts/DS.otf
 
   assets:
     - .env
