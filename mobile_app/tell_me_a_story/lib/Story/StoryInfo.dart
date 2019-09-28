@@ -17,6 +17,28 @@ class StoryInfo extends StatefulWidget {
 }
 
 class _StoryInfoState extends State<StoryInfo> {
+  List<Widget> personalities = new List();
+
+  @override
+  void initState() {
+    super.initState();
+    buildPersonalities();
+  }
+
+  buildPersonalities() {
+    for (var personality in widget.story.personnality) {
+      personalities.add(Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            personality,
+            style: TextStyle(color: Colors.white, fontSize: 16),
+          ),
+        ],
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -36,7 +58,7 @@ class _StoryInfoState extends State<StoryInfo> {
                       child: Text(
                         "Le commencement",
                         style: TextStyle(
-                            color: CustomColors.purple,
+                            color: CustomColors.paleYellow,
                             fontSize: 25,
                             fontFamily: "Timoteo"),
                       ),
@@ -78,8 +100,8 @@ class _StoryInfoState extends State<StoryInfo> {
                             widget.story.players
                                 .toString()
                                 .replaceFirst(".", " à "),
-                                icon: Icons.supervised_user_circle,
-                                iconColor: Colors.lightBlue,
+                            icon: Icons.supervised_user_circle,
+                            iconColor: Colors.lightBlue,
                           ),
                           CustomRow(
                             "Pages: ",
@@ -115,7 +137,7 @@ class _StoryInfoState extends State<StoryInfo> {
                           "Votes: ",
                           widget.story.vote.toString(),
                           icon: Icons.person_pin,
-                          iconColor: Colors.cyan,
+                          iconColor: CustomColors.green,
                         ),
                         CustomRow(
                           "Créé le: ",
@@ -128,10 +150,24 @@ class _StoryInfoState extends State<StoryInfo> {
                   ],
                 ),
               ),
-              CustomButton(
-                color: CustomColors.orange,
-                content: Text("Voir les personnalités disponibles"),
-              ),
+              Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(
+                          "Personnalités disponnibles",
+                          style: TextStyle(
+                              color: CustomColors.paleYellow, fontSize: 18),
+                        ),
+                      ),
+                      Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: personalities,
+                          ))
+                    ],
+                  ))
             ],
           ),
           Container(
@@ -141,7 +177,7 @@ class _StoryInfoState extends State<StoryInfo> {
                   child: Container(
                     child: MaterialButton(
                       onPressed: () {},
-                      color: CustomColors.green,
+                      color: CustomColors.lightBlue,
                       child: Container(
                         padding: EdgeInsets.all(20),
                         child: Text(
