@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
                   Text(
                     "Tell me a story",
                     style: TextStyle(
-                        color: CustomColors.purple,
+                        color: CustomColors.paleYellow,
                         fontSize: 38,
                         fontWeight: FontWeight.w900,
                         fontFamily: "Timoteo"),

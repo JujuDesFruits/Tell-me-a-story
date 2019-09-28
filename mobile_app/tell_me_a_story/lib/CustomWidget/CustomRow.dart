@@ -5,8 +5,10 @@ import 'package:tell_me_a_story/Utils/Colors.dart';
 class CustomRow extends StatelessWidget {
   final title;
   final content;
+  final icon;
+  final iconColor;
 
-  CustomRow(this.title, this.content);
+  CustomRow(this.title, this.content, {this.icon, this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,15 @@ class CustomRow extends StatelessWidget {
                 content,
                 style: TextStyle(color: Colors.white),
               ),
+              icon != null
+                  ? Container(
+                    margin: EdgeInsets.only(left: 10),
+                      child: Icon(
+                        icon,
+                        color: iconColor,
+                      ),
+                    )
+                  : Container(),
             ],
           ),
         ],

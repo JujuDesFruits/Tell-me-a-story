@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tell_me_a_story/CustomWidget/CustomRow.dart';
 import 'package:tell_me_a_story/Utils/Colors.dart';
 
 class StoryCard extends StatelessWidget {
@@ -33,12 +32,13 @@ class StoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.all(15),
       padding: EdgeInsets.all(3),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
           gradient: LinearGradient(colors: [
         CustomColors.lightBlue,
-        CustomColors.blue.withAlpha(030)
+        CustomColors.blue.withAlpha(150)
       ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: FlatButton(
         disabledColor: color.withOpacity(0.2),
