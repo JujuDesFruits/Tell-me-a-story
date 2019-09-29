@@ -30,19 +30,65 @@ class _StoryPlayerState extends State<StoryPlayer> {
   }
 
   initData() async {
-    await getChild();
+    await getFirstChilds();
     // sentences.addAll(currentScene.scene.toString().split("."));
     sceneText = widget.story.scene;
   }
 
-  getChild() async {
-    currentScene = (await Scene.listToScenes(
-        await SceneHelper.get(parentId: widget.story.id)))[0];
+  getNextChild(String action) async {
+    currentScene = await Scene.listToScenes(
+        await SceneHelper.getByAction(action: action))[0];
 
-    actions.add(BigButton(
-      content: currentScene.action,
-      color: CustomColors.lightBlue,
-    ));
+    buildText();
+
+    actions = new List();
+    childs = await Scene.listToScenes(
+        await SceneHelper.get(parentId: currentScene.id));
+
+    buildActions();
+
+    setState(() {});
+  }
+
+  buildText() {
+    List<String> badCars = currentScene.scene.toString().split("<bad>");
+    List<String> goodCars = currentScene.scene.toString().split("<good>");
+
+    sceneText = currentScene.scene.toString();
+    if (badCars.length > 1) {
+      String pattern = badCars[1];
+      badCars[1] = badCars[1].replaceAll("<psd>", "TEST");
+      sceneText = sceneText.replaceAll(pattern, badCars[1]);
+    }
+
+    if (goodCars.length > 1) {
+      String pattern = goodCars[1];
+      goodCars[1] = goodCars[1].replaceAll("<psd>", "TEST");
+      sceneText = sceneText.replaceAll(pattern, goodCars[1]);
+    }
+
+    sceneText = sceneText
+        .replaceAll("<good>", "")
+        .replaceAll("<bad>", "")
+        .replaceAll("<event>", "");
+  }
+
+  buildActions() {
+    for (var child in childs) {
+      actions.add(BigButton(
+        callBackParam: child.action,
+        callBack: getNextChild,
+        content: child.action,
+        color: CustomColors.lightBlue,
+      ));
+    }
+  }
+
+  getFirstChilds() async {
+    childs = await Scene.listToScenes(
+        await SceneHelper.get(parentId: widget.story.id));
+
+    buildActions();
 
     setState(() {});
   }

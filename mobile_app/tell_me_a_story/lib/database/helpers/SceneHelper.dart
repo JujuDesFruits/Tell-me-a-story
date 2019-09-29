@@ -11,4 +11,9 @@ class SceneHelper {
     DbCollection db = await Database().database;
     return await db.find().toList();
   }
+
+  static dynamic getByAction({dynamic action}) async {
+    DbCollection db = await Database().database;
+    return await db.find({"action": action}).toList();
+  }
 }

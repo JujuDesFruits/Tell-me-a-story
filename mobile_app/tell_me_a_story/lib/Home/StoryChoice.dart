@@ -51,7 +51,7 @@ class _StoryChoice extends State<StoryChoice> {
         );
       }
     }
-
+    
     return Background(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,

@@ -6,9 +6,15 @@ class BigButton extends StatefulWidget {
   final double width;
   final String content;
   final Color color;
-  final dynamic callBack;
+  final callBack;
+  final dynamic callBackParam;
 
-  BigButton({this.width, this.color, this.content, this.callBack});
+  BigButton(
+      {this.width,
+      this.color,
+      this.content,
+      this.callBack,
+      this.callBackParam});
 
   @override
   _BigButtonState createState() => _BigButtonState();
@@ -26,10 +32,7 @@ class _BigButtonState extends State<BigButton> {
           child: Container(
             child: Text(
               widget.content,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 14),
               textAlign: TextAlign.center,
             ),
           ),
@@ -42,7 +45,11 @@ class _BigButtonState extends State<BigButton> {
       height: 100,
       child: CupertinoButton(
         padding: EdgeInsets.all(5),
-        onPressed: widget.callBack == null ? () {} : widget.callBack,
+        onPressed: widget.callBack == null
+            ? () {}
+            : () {
+                widget.callBack(widget.callBackParam);
+              },
         color: widget.color,
         child: Row(
           children: content,

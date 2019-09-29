@@ -3,8 +3,11 @@ class Scene {
   final dynamic scene;
   final dynamic action;
   final dynamic child;
+  final dynamic goodCar;
+  final dynamic badCar;
+  final dynamic gameOver;
 
-  Scene({this.id, this.scene, this.action, this.child});
+  Scene({this.id, this.scene, this.action, this.child, this.badCar, this.goodCar, this.gameOver});
 
   static listToScenes(List<Map<String, dynamic>> list) {
     List<Scene> scenes = new List();
@@ -14,6 +17,9 @@ class Scene {
         scene: item["scene"],
         action: item["action"],
         child: item["child"],
+        goodCar: item["goodCar"],
+        badCar: item["badCar"],
+        gameOver: item["gameover"],
       );
       scenes.add(scene);
     }
