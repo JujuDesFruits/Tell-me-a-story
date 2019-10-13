@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tell_me_a_story/Characters/CharacterCreation.dart';
 import 'package:tell_me_a_story/CustomWidget/Background.dart';
 import 'package:tell_me_a_story/CustomWidget/CustomButton.dart';
 import 'package:tell_me_a_story/CustomWidget/CustomRow.dart';
@@ -182,7 +183,10 @@ class _StoryInfoState extends State<StoryInfo> {
                       onPressed: () {
                         Navigator.of(context).push(
                           new MaterialPageRoute(builder: (builder) {
-                            return StoryPlayer(
+                            // return StoryPlayer(
+                            //   story: widget.story,
+                            // );
+                            return CharacterCreation(
                               story: widget.story,
                             );
                           }),
