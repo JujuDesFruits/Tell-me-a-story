@@ -9,20 +9,20 @@
     src: "roles/mongo/deb/{{item}}"
     dest: "/tmp/{{item}}"
   with_items:
-    - mongodb-org-server_4.0.11_amd64.deb
-    - mongodb-org-mongos_4.0.11_amd64.deb
-    - mongodb-org-tools_4.0.11_amd64.deb
-    - mongodb-org-shell_4.0.11_amd64.deb
+    - mongodb-org-server_{{version}}_amd64.deb
+    - mongodb-org-mongos_{{version}}_amd64.deb
+    - mongodb-org-tools_{{version}}_amd64.deb
+    - mongodb-org-shell_{{version}}_amd64.deb
   when: mongo_check_deb.rc == 1
 
 - name: install packages
   apt:
     deb: "{{item}}"
   with_items:
-    - /tmp/mongodb-org-server_4.0.11_amd64.deb
-    - /tmp/mongodb-org-mongos_4.0.11_amd64.deb
-    - /tmp/mongodb-org-tools_4.0.11_amd64.deb
-    - /tmp/mongodb-org-shell_4.0.11_amd64.deb
+    - /tmp/mongodb-org-server_{{version}}_amd64.deb
+    - /tmp/mongodb-org-mongos_{{version}}_amd64.deb
+    - /tmp/mongodb-org-tools_{{version}}_amd64.deb
+    - /tmp/mongodb-org-shell_{{version}}_amd64.deb
   when: mongo_check_deb.rc == 1
 
 - name: add rule firewall
