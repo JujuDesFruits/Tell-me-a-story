@@ -43,12 +43,3 @@ git pull . master
 
 Toute les images sont et doivent être libres de droit.
 
-## Crédits
-Voici la liste des contributeur au projet
-- [Coralie POINEAU](https://www.facebook.com/coralie.poineau)
-- [Léa RANSINAN](https://www.facebook.com/lea.lele.969)
-- [Pauline NAVARD](https://www.facebook.com/pauline.navard)
-- [Estelle COM-NOUGUE](https://www.facebook.com/estelle.comnougue.5)
-- [Syfaxs BRAHMI](https://www.linkedin.com/in/syfaxs-brahmi-236179134/?originalSubdomain=fr)
-- [Adrien CASSAR](http://adrien-cassar.fr/)
-- [Julien TRIJEAN](https://am-i-an.unusualperson.com/)
